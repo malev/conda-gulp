@@ -2,6 +2,9 @@ REM needed to ensure 2.3.0 see https://github.com/npm/npm/issues/4080
 CALL npm install -g --upgrade npm@next
 CALL npm install -g %PKG_NAME%@%PKG_VERSION%
 
+CALL cd %PREFIX%
+CALL npm dedupe
+
 REM Remove npm so it's not accidentally packaged up
 CALL npm uninstall -g npm
 
